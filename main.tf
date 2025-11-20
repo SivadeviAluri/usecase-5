@@ -3,7 +3,7 @@ provider "google" {
     credentials = file("/var/lib/jenkins/file.json")
 }
 resource "google_compute_instance" "instance1" {
-    name = "vm-1"
+    name = "vm-2"
     zone =  "us-west1-b" 
     machine_type = "e2-micro"
     boot_disk {
