@@ -51,13 +51,13 @@
 
     - name: Pull Flask image from DockerHub
       docker_image:
-        name: devi819/usecase-5
+        name: devi819/flask2:v1
         source: pull
 
     - name: Run Flask container
       docker_container:
         name: flaskapp
-        image: devi819/usecase-5
+        image: devi819/flask2:v1
         state: started
         restart_policy: always
         ports:
