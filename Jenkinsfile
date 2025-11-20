@@ -14,7 +14,7 @@ pipeline {
         stage('Docker image build') {  
             steps {  
                 echo "********** building is done ************"  
-                dir('usecase5') {  
+                dir('usecase-5') {  
                     sh 'docker build -t devi819/flask1:v1 .'  
                 }  
             }  
