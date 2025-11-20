@@ -15,7 +15,7 @@ pipeline {
             steps {  
                 echo "********** building is done ************"  
                 dir('usecase-5') {  
-                    sh 'docker build -t devi819/flask1:v1 .'  
+                    sh 'docker build -t devi819/flask2:v1 .'  
                 }  
             }  
         }
@@ -23,7 +23,7 @@ pipeline {
             steps {  
                 sh """  
                 docker login -u ${DOCKERHUB_CREDENTIALS_USR} -p ${DOCKERHUB_CREDENTIALS_PSW}  
-                docker push devi819/flask1:v1  
+                docker push devi819/flask2:v1  
                 """  
             }  
         }
