@@ -33,6 +33,7 @@ pipeline {
                 dir('usecase-5') {
                     sh 'git pull origin main'
                     sh 'terraform init'
+                    sh 'terraform destory -auto-approve'
                     sh 'terraform apply -auto-approve'
                 }
             }
