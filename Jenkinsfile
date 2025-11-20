@@ -35,7 +35,7 @@ pipeline {
                     sh 'terraform init'
                     sh 'terraform destroy --auto-approve || true'
                     sh 'terraform apply --auto-approve'
-                    sh 'sleep 10'
+                    
                 }
             }
         }
