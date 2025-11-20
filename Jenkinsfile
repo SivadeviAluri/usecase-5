@@ -30,7 +30,7 @@ pipeline {
         stage('vm creation using Terraform') {
             steps {
                 echo "********** VM creation is done ************"
-                dir('/var/lib/jenkins/workspace/usecase-5') {
+                dir('usecase-5') {
                     sh 'git pull origin main'
                     sh 'terraform init'
                     sh 'terraform apply -auto-approve'
@@ -40,7 +40,7 @@ pipeline {
         stage('Ansible deployment') {
             steps {
                 echo "********** Ansible deployment is done ************"
-                dir('/var/lib/jenkins/workspace/usecase-5') {
+                dir('usecase-5') {
                     sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i /var/lib/jenkins/workspace/ip.txt playbook.yaml --private-key=/var/lib/jenkins/.ssh/id_ed25519 '
                 }
             }
