@@ -33,8 +33,9 @@ pipeline {
                 dir('usecase-5') {
                     sh 'git pull origin main'
                     sh 'terraform init'
-                    sh 'terraform destroy -auto-approve'
-                    sh 'terraform apply -auto-approve'
+                    sh 'terraform destroy --auto-approve || true'
+                    sh 'terraform apply --auto-approve'
+                    sh 'sleep 10'
                 }
             }
         }
