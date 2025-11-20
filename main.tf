@@ -18,8 +18,21 @@ resource "google_compute_instance" "instance1" {
         }
     }
     metadata = {
+      enable-oslogin = "FALSE"
       ssh-keys = "sivadevialuri65:${file("/var/lib/jenkins/.ssh/id_ed25519.pub")}"
     }
+}
+
+resource "google_compute_firewall" "ssh" {
+  name    = "allow-ssh"
+  network = "default"
+
+  allow {
+    protocol = "tcp"
+    ports    = ["22"]
+  }
+
+  source_ranges = ["0.0.0.0/0"]
 }
 
 resource "local_file" "file1" {
