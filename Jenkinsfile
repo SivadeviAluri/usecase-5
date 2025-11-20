@@ -7,7 +7,7 @@ pipeline {
         stage('checkout') {  
             steps {  
                 echo "*********** cloning the code **********"  
-                sh 'rm -rf usecase5 || true'  
+                sh 'rm -rf usecase-5 || true'  
                 sh 'git clone https://github.com/SivadeviAluri/usecase-5.git' 
             }  
         }   
