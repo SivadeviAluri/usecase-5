@@ -19,7 +19,7 @@ resource "google_compute_instance" "instance1" {
     }
     metadata = {
       enable-oslogin = "FALSE"
-      ssh-keys = "sivadevialuri65:${file("/var/lib/jenkins/.ssh/id_ed25519.pub")}"
+      ssh-keys = "devi:${file("/var/lib/jenkins/.ssh/id_ed25519.pub")}"
     }
 }
 
@@ -36,6 +36,6 @@ resource "google_compute_firewall" "ssh" {
 }
 
 resource "local_file" "file1" {
-  content  = "sivadevialuri65@${google_compute_instance.instance1.network_interface[0].access_config[0].nat_ip}"
+  content = "devi@${google_compute_instance.instance1.network_interface[0].access_config[0].nat_ip}"
   filename = "/var/lib/jenkins/workspace/ip.txt"
 }
